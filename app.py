@@ -1,0 +1,11 @@
+from flask import flask, request, render_template
+app = flask(__name__)
+@app.route('/register',methods=['GET','POST'])
+def register():
+    if request.method=='POST':
+        name=request.form['name']
+        password=request.form['password']
+        return render_template('success.html')
+    return render_template('register.html')
+if __name__=='__main__':
+    app.run(host='0.0.0.0')
