@@ -4,6 +4,7 @@ app = flask(__name__)
 def register():
     if request.method=='POST':
         name=request.form['name']
+        email=request.form['email']
         password=request.form['password']
         return render_template('success.html')
     return render_template('register.html')
